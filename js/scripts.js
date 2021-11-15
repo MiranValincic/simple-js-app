@@ -1,4 +1,5 @@
-let age = 28;
-let name = 'Miran';
+let favoriteFood = 'pizza' ;
 
-document.write(name) ;
+document.write(favoriteFood);
+
+alert('Hello world!');
