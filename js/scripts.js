@@ -1,5 +1,21 @@
-let favoriteFood = 'pizza' ;
+let pokemonList = [
+{
+    name: "Bulbasor",
+    height : 0.7, 
+    types: ['grass', 'poison'] 
+},
 
-document.write(favoriteFood);
+{
+    name: "Charmander",
+    height: 0.6,
+    types: ['monster', 'dragon']
+},
 
-alert('Hello world!');
+{
+    name: "Squirtle",
+    height: 0.5,
+    types: ['monster', 'water']
+}
+    
+] ;
+
