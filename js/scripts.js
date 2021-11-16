@@ -37,7 +37,7 @@ let pokemonList = [
     
 ] ;
 
-// Write Pokemon names on website and looks for a Pokemon with the high > 1
+// Write Pokemon names on website and looks for a Pokemon with the height > 1
 
 for (let i=0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 1){
