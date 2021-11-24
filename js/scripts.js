@@ -1,50 +1,52 @@
-let pokemonList = [
-  {
-    name: "Bulbasor",
-    height : 0.7, 
-    types: ['grass', 'poison'] 
-  },
-  {
-    name: "Charmander",
-    height: 0.6,
-    types: ['monster', 'dragon']
-  },
-  {
-    name: "Squirtle",
-    height: 0.5,
-    types: ['monster', 'water']
-  },
-  {
-    name: "Venusaur",
-    height: 2,
-    types: ['monster', 'grass']
-  },
-  {
-    name: "Charizard",
-    height: 1.7,
-    types: ['monster', 'dragon']
-  },
-  {
-    name: "Blastoise",
-    height: 1.6,
-    types: ['monster', 'water']
-  },
-];
+// IIFE function
+let pokemonRepository = (function () {
+  const list = [
+    ["Bulbasor", 0.7, ["grass", "poison"]],
+    ["Charmander", 0.6, ["monster", "dragon"]],
+    ["Squirtle", 0.5, ["monster", "water"]],
+    ["Venusaur", 2, ["monster", "grass"]],
+    ["Charizard", 1.7, ["monster", "dragon"]],
+    ["Blastoise", 1.6, ["monster", "water"]],
+  ];
 
-// Write Pokemon names on website and looks for a Pokemon with the height > 1
+  const pokemonList = [];
+  list.forEach(function (pokemon) {
+    const name = pokemon[0];
+    const height = pokemon[1];
+    const types = pokemon[2];
+    add(name, height, types);
+  });
 
-var template = "<ul>";
-for (let i=0; i < pokemonList.length; i++) {
-    const name = pokemonList[i].name;
-    const height = pokemonList[i].height;
-    const isBig = height > 1 ? " - Wow that's big" : "";
-    template += `
-    <li>${name} (height: ${height})${isBig}</li>
-    `;
-}
-template += "</ul>";
-document.write(template);
+  function getAll() {
+    return pokemonList;
+  }
 
+  function add(name, height, types) {
+    pokemonList.push({
+      name,
+      height,
+      types,
+    });
+  }
 
+  return {
+    getAll,
+    add,
+  };
+})();
 
+// Add new pokemon
 
+pokemonRepository.add("Pikachu", "0.4", ["Field", "Fairy"]);
+
+var temp = "<ul>";
+pokemonRepository.getAll().forEach(function (pokemon) {
+  temp += `
+  <li>
+    ${pokemon.name} <br />
+    Height: ${pokemon.height} <br />
+    Types: ${pokemon.types}
+  </li>`;
+});
+temp += "</ul>";
+document.write(temp);
