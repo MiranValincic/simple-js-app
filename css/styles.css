@@ -10,6 +10,7 @@ primary color: #DAF3FF;
 :root {
     --background-color: #F6CF57;
     --primary-color: #2F4858;
+    --list-background-color: #ee1515;
 }
 
 * {
@@ -28,6 +29,12 @@ body {
 .banner {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 160px;
+    height: 160px;
 }
 
 ul {
