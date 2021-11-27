@@ -5,61 +5,66 @@ primary color: #DAF3FF;
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
 
 :root {
-    --background-color: #F6CF57;
-    --primary-color: #2F4858;
-    --list-background-color: #ee1515;
+  --background-color: #f6cf57;
+  --primary-color: #2f4858;
+  --list-background-color: #ad2900;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    margin-top: 5em;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 5em;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
 }
 
 .banner {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .banner img {
-    width: 160px;
-    height: 160px;
+  width: 68px;
+  height: 68px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn {
-    background-color: var(--list-background-color);
-    border: none;
-    border-radius: 10px;
-    color: var(--background-color);
-    padding: 20px;
-    width: 160px;
+  background-color: var(--list-background-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--background-color);
+  padding: 20px;
+  width: 160px;
 }
 
-.btn:hover{
-    background-color: var(--background-color);
-    color: var(--list-background-color);
+.btn:hover {
+  background-color: var(--background-color);
+  color: var(--list-background-color);
 }
