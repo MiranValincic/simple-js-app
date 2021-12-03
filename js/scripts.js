@@ -16,8 +16,11 @@ let pokemonRepository = (function () {
     let listItem = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
-    button.classList.add("btn");
+    button.classList.add("btn", "btn-primary");
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#pkModal");
     listItem.appendChild(button);
+    listItem.classList.add("group-list-item");
     pokemonList.appendChild(listItem);
     details(button, pokemon);
   }
@@ -69,61 +72,29 @@ let pokemonRepository = (function () {
     });
   }
 
-  let modalContainer = document.querySelector("#modal-container");
-
   function showModal(pokemon) {
-    let modal = document.createElement("div");
-    modal.classList.add("modal");
-
-    modalContainer.innerHTML = "";
-
-    let closeButtonElement = document.createElement("button");
-    closeButtonElement.classList.add("modal-close");
-    closeButtonElement.innerText = "X";
-    closeButtonElement.addEventListener("click", hideModal);
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    modalTitle.empty();
+    modalBody.empty();
 
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
 
-    let contentElement = document.createElement("p");
-    contentElement.innerText = "Height: " + pokemon.height;
-
     let imgElement = document.createElement("img");
     imgElement.src = pokemon.imageUrl;
 
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
+    let contentElement = document.createElement("p");
+    contentElement.innerText = "Height: " + pokemon.height;
+
+    modalBody.append(imgElement);
+    modalTitle.append(titleElement);
+    modalBody.append(contentElement);
 
     pokemon.types.forEach((item) => {
       let contentElement = document.createElement("p");
       contentElement.innerText = "Type: " + item.type.name;
-      modal.appendChild(contentElement);
-    });
-
-    modal.appendChild(imgElement);
-
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add("is-visible");
-
-    function hideModal() {
-      modalContainer.classList.remove("is-visible");
-    }
-
-    window.addEventListener("keydown", (e) => {
-      if (
-        e.key === "Escape" &&
-        modalContainer.classList.contains("is-visible")
-      ) {
-        hideModal();
-      }
-    });
-
-    modalContainer.addEventListener("click", (e) => {
-      let target = e.target;
-      if (target === modalContainer) {
-        hideModal();
-      }
+      modalBody.append(contentElement);
     });
   }
 

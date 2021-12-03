@@ -2,6 +2,7 @@
      Colors:
 background color: #F6CF57;
 primary color: #DAF3FF;
+nav-color: #003a70;
 
 */
 
@@ -11,6 +12,7 @@ primary color: #DAF3FF;
   --background-color: #f6cf57;
   --primary-color: #2f4858;
   --list-background-color: #ad2900;
+  --nav-color: #003a70;
 }
 
 * {
@@ -23,31 +25,14 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  margin-top: 5em;
 }
 
-.banner {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+.navbar {
+  background-color: var(--nav-color);
 }
 
-.banner img {
-  width: 68px;
-  height: 68px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 20px;
+.title {
+  color: #d7918c;
 }
 
 .btn {
@@ -65,53 +50,23 @@ li {
   color: var(--list-background-color);
 }
 
-.main {
-  display: flex;
-  justify-content: center;
+.modal-body img {
+  height: 180px;
+  width: 180px;
+  background-color: var(--nav-color);
+  border: 1px solid var(--list-background-color);
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+.close {
+  color: var(--list-background-color);
+  background: none;
+  border: none;
+  font-size: 2em;
 }
 
-#modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  overflow: auto;
-  display: none;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: inline-block;
-}
-
-.modal {
-  border-radius: 20px;
-  display: inline-block;
-  width: 30%;
-  background-color: var(--background-color);
-}
-
-.modal img {
-  width: 120px;
-  height: 120px;
-}
-
-.modal-close {
-  margin-top: 0.5rem;
-  margin-left: 90%;
-}
-
-h1 {
-  text-transform: capitalize;
+h5 {
+  text-transform: uppercase;
 }
 
 .pokemon-list {
@@ -121,20 +76,18 @@ h1 {
   gap: 2em;
 }
 
+@media (max-width: 700px) {
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 500px) {
   .pokemon-list {
     grid-template-columns: 1fr 1fr;
   }
-
   .modal {
+    margin-left: 20px;
     width: 90%;
   }
-}
-
-button {
-  border: none;
-  border-radius: 10px;
-  font-size: 0.8em;
-  background-color: var(--list-background-color);
-  color: var(--background-color);
 }
