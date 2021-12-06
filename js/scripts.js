@@ -1,7 +1,7 @@
 // IIFE function
 let pokemonRepository = (function () {
   const pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   function getAll() {
     return pokemonList;
@@ -57,7 +57,7 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        item.imageUrl = details.sprites.front_default;
+        item.imageUrl = details.sprites.other["official-artwork"].front_default;
         item.height = details.height;
         item.types = details.types;
       })
