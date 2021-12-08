@@ -10,14 +10,16 @@ nav-color: #003a70;
 @import url("http://fonts.cdnfonts.com/css/pokemon-solid");
 
 :root {
-  --background-color: #f6cf57;
-  --primary-color: #2f4858;
-  --list-background-color: #ad2900;
-  --nav-color: #003a70;
+  --background-color: #ce1111;
+  --primary-color: #003a70;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  max-width: 100%;
 }
 
 body {
@@ -26,45 +28,45 @@ body {
   font-family: "Pokemon Solid", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  padding-bottom: 2em;
+  max-width: 100%;
 }
 
 .navbar {
-  letter-spacing: 10px;
-  background-color: var(--nav-color);
+  background-color: var(--primary-color);
+  letter-spacing: 7px;
 }
 
 .title {
-  color: var(--background-color);
+  color: white;
 }
 
-ul .btn {
-  background-color: var(--list-background-color);
+.btn {
+  background-color: var(--primary-color);
   border: none;
   border-radius: 10px;
-  color: var(--background-color);
+  color: white;
   padding: 20px;
   width: 160px;
   text-transform: capitalize;
-  letter-spacing: 4px;
 }
 
 .btn:hover {
-  background-color: #059ac7;
-  color: var(--list-background-color);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+ul .btn {
+  letter-spacing: 4px;
 }
 
 .modal-body img {
-  height: 160px;
-  width: 160px;
-  padding: 20px;
-  background-color: var(--nav-color);
-  border: 1px solid var(--list-background-color);
-  border-radius: 50%;
+  height: 180px;
+  width: 180px;
   margin-bottom: 25px;
 }
+
 .close {
-  color: var(--list-background-color);
+  color: var(--primary-color);
   background: none;
   border: none;
   font-size: 2em;
@@ -72,14 +74,19 @@ ul .btn {
 
 h5 {
   text-transform: uppercase;
-  letter-spacing: 5px;
 }
 
 .pokemon-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  gap: 1em;
+  gap: 2em;
+}
+
+@media (max-width: 1000px) {
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -90,7 +97,7 @@ h5 {
 
 @media (max-width: 500px) {
   .pokemon-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .modal {
     margin-left: 20px;

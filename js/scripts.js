@@ -26,7 +26,7 @@ let pokemonRepository = (function () {
   }
 
   function details(button, pokemon) {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", () => {
       showDetails(pokemon);
     });
   }
@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
+    loadDetails(pokemon).then(function (e) {
       showModal(pokemon);
     });
   }
@@ -75,6 +75,7 @@ let pokemonRepository = (function () {
   function showModal(pokemon) {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
+
     modalTitle.empty();
     modalBody.empty();
 
