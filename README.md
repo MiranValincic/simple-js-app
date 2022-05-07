@@ -1,7 +1,7 @@
 Simple JS Pokedex project <br>
 A small web application that loads data from an external API and enables the viewing of different Pokémon in detail. Built with HTML, CSS, and JavaScript, jQuery and Bootstrap.
 
-
+![alt text](pokedex.png)
 User Goals  <br>
 Users should be able to view a list of 151 pokemon and see more details for a given pokemon on demand.
 
